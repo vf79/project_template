@@ -21,6 +21,7 @@ Modelo de estrutura para projetos em fastapi framework
 Em desenvolvimento
 ### Recursos ###
 - [X] Aplicação base
+- [ ] Todo
 - [ ] Autenticação
 ### Pré-requisitos ###
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
