@@ -29,9 +29,18 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 ### Dependências ###
 #### Utilizando Powershell ####
+Criar o diretório da aplicação
+```powershell
+New-item -Type "Directory" <Nome do projeto/aplicação>
+CD <Nome do projeto/aplicação>
+```
 Instalando Ambiente virtual python VirtualEnv
 ```powershell
 python -m venv .venv --upgrade-deps
+```
+Habilitando o ambiente virtual python
+```powershell
+.venv\Script\activate
 ```
 Instalar as dependências do projeto execute:
 ```powershell
@@ -78,11 +87,12 @@ Abrir no navegador o arquivo index.html da pasta htmlcov
 ### Desenvolvimento ###
 Para rodar o programa:
 ```powershell
-uvicorn agenda.main:app --reload
+uvicorn app.main:app --reload
 ```
 ### Deploy ###
 
 ### API ###
+#### Em ambiente de Desenvolvimento ###
 Para listar os endpoints da aplicação, rodar a aplicação e acessar:
 [API endpoints](http://127.0.0.1:8000/docs)
 
