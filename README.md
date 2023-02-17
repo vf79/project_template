@@ -29,28 +29,27 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 ### Dependências ###
 #### Utilizando Powershell ####
-Criar o diretório da aplicação
+Acessar o diretório da aplicação
 ```powershell
-New-item -Type "Directory" <Nome do projeto/aplicação>
-CD <Nome do projeto/aplicação>
+cd <Nome do projeto/aplicação>
 ```
-Instalando Ambiente virtual python VirtualEnv
+Instalar o Ambiente virtual python VirtualEnv
 ```powershell
 python -m venv .venv --upgrade-deps
 ```
-Habilitando o ambiente virtual python
+Habilitar o ambiente virtual python
 ```powershell
 .venv\Script\activate
 ```
-Instalar as dependências do projeto execute:
+Instalar as dependências do projeto:
 ```powershell
 .\run.cmd --install
 ```
-Instalar as dependências de desenvolvimento do projeto execute:
+Instalar as dependências de desenvolvimento do projeto:
 ```powershell
 .\run.cmd --install-dev
 ```
-Instalar as dependências de testes do projeto execute:
+Instalar as dependências de testes do projeto:
 ```powershell
 .\run.cmd --install-test
 ```
