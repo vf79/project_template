@@ -1,6 +1,8 @@
 # project_template #
+
 ## Sobre ##
 Modelo de estrutura para projetos em fastapi framework
+
 ## Tabela de Conteúdos ##
 * [Sobre](#sobre)
 * [Tabela de conteúdos](#tabela-de-conteúdos)
@@ -17,17 +19,24 @@ Modelo de estrutura para projetos em fastapi framework
 * [Contribuindo](#contribuindo)
 * [Autor](#autor)
 * [Licença](#licença)
+
 ## Status do projeto ##
 Em desenvolvimento
+
 ### Recursos ###
 - [X] Aplicação base
+- [ ] Logging
 - [ ] Todo
 - [ ] Autenticação
+
 ### Pré-requisitos ###
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Python](https://python.org).
+[Git](https://git-scm.com), [Python](https://python.org).  
+Para o python utilizo o pacote [Winpython](https://winpython.github.io/).  
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
 ### Dependências ###
+
 #### Utilizando Powershell ####
 Acessar o diretório da aplicação
 ```powershell
@@ -53,6 +62,7 @@ Instalar as dependências de testes do projeto:
 ```powershell
 .\run.cmd --install-test
 ```
+
 #### Gerar Secret Key ####
 Para gerar o secret key da aplicação usando python execute:
 ```python
@@ -74,8 +84,10 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 ### Tecnologias ###
 [Dynaconf](https://www.dynaconf.com/), [FastApi](https://fastapi.tiangolo.com/), [Python](https://python.org), [PostgreSQL](https://www.postgresql.org/),[SqlAlchemy](https://www.sqlalchemy.org/)
+
 ### Testes ###
 Para realizar testes, alterar a constante env do arquivo settings.toml para "testing"
+
 #### Utilizando Powershell ####
 Para realizar os testes:
 ```powershell
@@ -83,14 +95,17 @@ Para realizar os testes:
 ```
 Para ver o relatório de testes em html:
 Abrir no navegador o arquivo index.html da pasta htmlcov
+
 ### Desenvolvimento ###
 Para rodar o programa:
 ```powershell
 uvicorn app.main:app --reload
 ```
+
 ### Deploy ###
 
 ### API ###
+
 #### Em ambiente de Desenvolvimento ###
 Para listar os endpoints da aplicação, rodar a aplicação e acessar:
 [API endpoints](http://127.0.0.1:8000/docs)
@@ -102,7 +117,7 @@ Para listar os endpoints da aplicação, rodar a aplicação e acessar:
 [Contribuindo](./contributing.md)
 
 ## Autor ##
-[Valmir França](http://vf79.com.br)
+[Valmir França](https://vf79.com.br)
 
 ## Licença ##
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
