@@ -4,6 +4,7 @@ chcp 65001
 set name="app"
 
 if "%1"=="--clean" goto clean
+if "%1"=="--docs" goto docs
 if "%1"=="--env" goto env
 if "%1"=="--execute" goto execute
 if "%1"=="--formate" goto formate
@@ -16,12 +17,17 @@ if "%1"=="--test-run" goto test-run
 goto help
 
 :clean
+    set list-dirs=build dist htmlcov site
     echo "Excluindo arquivos e diretorios desnecessários..."
-    for /d /r . %%d in (__pycache__, *.egg-info, .pytest_cache) do @if exist "%%d" rd /s /q "%%d"
     for /r . %%f in (*.pyc) do @if exist "%%f" del "%%f"
-    rd /s /q build
-    rd /s /q htmlcov
+    for /d /r . %%d in (__pycache__, *.egg-info, .pytest_cache) do @if exist "%%d" rd /s /q "%%d"
+    for %%a  in (%list-dirs%) do @if exist "%%a" rd /s /q "%%a"
     del .coverage
+goto end
+
+:docs
+    echo "Mkdocs criando arquivos de documentação..."
+    mkdocs build --clean
 goto end
 
 :env
@@ -80,6 +86,7 @@ goto end
     echo "Utilize .\run.cmd --<parametro>"
     echo "Parâmetros:"
     echo "clean - Limpa o codigo"
+    echo "docs - Cria a documentação com mkdocs"
     echo "env - Exibe informações para configurar environment"
     echo "execute - Exibe o comando para executar o app"
     echo "formate - Formata o codigo em 80 colunas"
