@@ -11,6 +11,7 @@ if "%1"=="--formate" goto formate
 if "%1"=="--install" goto install
 if "%1"=="--install-dev" goto install-dev
 if "%1"=="--install-test" goto install-test
+if "%1"=="--lint" goto lint
 if "%1"=="--test" goto test
 if "%1"=="--test-debug" goto test-debug
 if "%1"=="--test-run" goto test-run
@@ -58,11 +59,18 @@ goto end
 :install-dev
     echo "Instalando dependências de desenvolvimento..."
     pip install -e .[dev]
+    echo "instalando dependências de qualidade..."
+    pip install -e .[quali]
 goto end
 
 :install-test
     echo "Instalando dependências de testes..."
     pip install -e .[test]
+goto end
+
+:lint
+    echo "Verificando qualidade do codigo..."
+    .\.venv\Scripts\python -m pflake8
 goto end
 
 :test
