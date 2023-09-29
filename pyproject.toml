@@ -29,7 +29,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["alembic", "ipdb", "ipython", "mkdocs"]
 test = ["httpx", "pytest", "pytest-cov"]
-quali = ["flake8", "flake8-docstrings", "pyproject-flake8", "black", , "isort"]
+lint = ["flake8", "flake8-docstrings", "pyproject-flake8", "black", "isort"]
 
 [tool.isort]
 py_version=310

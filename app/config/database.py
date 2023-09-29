@@ -1,3 +1,4 @@
+"""Load Database."""
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -14,10 +15,12 @@ Base = declarative_base()
 
 
 def create_db():
+    """Create database from models."""
     Base.metadata.create_all(bind=engine)
 
 
 def get_db():
+    """Return DB Session."""
     db = SessionLocal()
     try:
         yield db

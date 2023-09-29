@@ -1,3 +1,4 @@
+"""Define Cors Rules."""
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
@@ -11,6 +12,7 @@ origins = [
 
 
 def configure(app):
+    """Configure cors rules in app."""
     app.add_middleware(
         CORSMiddleware,
         allow_origins=origins,

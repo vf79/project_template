@@ -10,6 +10,7 @@ if "%1"=="--execute" goto execute
 if "%1"=="--formate" goto formate
 if "%1"=="--install" goto install
 if "%1"=="--install-dev" goto install-dev
+if "%1"=="--install-lint" goto install-lint
 if "%1"=="--install-test" goto install-test
 if "%1"=="--lint" goto lint
 if "%1"=="--test" goto test
@@ -59,8 +60,11 @@ goto end
 :install-dev
     echo "Instalando dependências de desenvolvimento..."
     pip install -e .[dev]
-    echo "instalando dependências de qualidade..."
-    pip install -e .[quali]
+goto end
+
+:install-lint
+    echo "Instalando dependências de linter..."
+    pip install -e .[lint]
 goto end
 
 :install-test
@@ -100,6 +104,7 @@ goto end
     echo "formate - Formata o codigo em 80 colunas"
     echo "install - Instala dependências"
     echo "install-dev - Instala dependências de desenvolvimento"
+    echo "install-lint - Instala dependências de lint"
     echo "install-test - Instalac dependências de testes"
     echo "test - Executa testes"
     echo "test-debug - Executa testes com debug ipdb"

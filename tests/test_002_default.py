@@ -1,4 +1,8 @@
+"""Test 002 Default Route."""
+
+
 def test_default(client):
+    """Test Default Page exist."""
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {
@@ -9,6 +13,7 @@ def test_default(client):
 
 
 def test_default_no_exist(client):
+    """Test Default Page not exist."""
     response = client.get("/qualquer_url")
     assert response.status_code == 404
     assert response.headers == {
